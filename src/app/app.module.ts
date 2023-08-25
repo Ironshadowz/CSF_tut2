@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { InputsComponent } from './inputs/inputs.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgMaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NgMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

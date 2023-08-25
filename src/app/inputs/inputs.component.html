@@ -1,31 +1,30 @@
 <h3>Please Enter tasks and description</h3>
+<div class="container-fluid">
 <form [formGroup]="form" (ngSubmit)="add(form.value)">
+  <mat-form-field>
+    <mat-label>Description: </mat-label>
+    <br>
+    <input matInput type="text" formControlName="description" >
+  </mat-form-field>
+  <br>
+  <mat-radio-group formControlName="priority">
+    <mat-label>Priority: </mat-label>
+      <mat-radio-button type="radio" value="Low">Low</mat-radio-button>
+      <mat-radio-button type="radio" value="Medium">Medium</mat-radio-button>
+      <mat-radio-button type="radio" value="High">High</mat-radio-button>
+  </mat-radio-group>
+  <br>
+  <mat-form-field>
+    <mat-label for="date">Due date: </mat-label>
+    <input matInput type="date" formControlName="date">
+  </mat-form-field>
   <div>
-    <label>Description: </label>
-    <input type="text" formControlName="description" >
-  </div>
-  <div>
-    <label for="priority">Priority: </label>
-    <label>
-      <input type="radio" formControlName="priority" value="Low">Low
-    </label>
-    <label>
-      <input type="radio" formControlName="priority" value="Medium">Medium
-    </label>
-    <label>
-      <input type="radio" formControlName="priority" value="High">High
-    </label>
-  </div>
-  <div>
-    <label for="date">Due date: </label>
-    <input type="date" formControlName="date">
-  </div>
-  <div>
-    <button type="submit">Add</button>
+    <button mat-raised-button type="submit">Add</button>
   </div>
 </form>
+</div>
 <br>
-<div *ngIf="tasks">
+<div *ngIf="tasks[0]">
   <h3>Tasks</h3>
   <table>
    <tbody *ngFor="let i of tasks; let j = index">
